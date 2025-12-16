@@ -17,28 +17,28 @@
   <div class="card">
     <img src="tes.jpg" class="qr" alt="QR Payment" onclick="openPreview(this)">
 
-    <p class="no">No DANA: <span id="dana">087750471148</span></p>
+    <p class="no">No DANA: <span id="dana">089619563678</span></p>
 
     <div class="btn-group">
-      <a href="https://link.dana.id/qr/087750471148" class="btn primary">Bayar Sekarang</a>
+      <a href="https://link.dana.id/qr/>089619563678" class="btn primary">Bayar Sekarang</a>
       <button class="btn" onclick="copyText()">Copy Nomor</button>
     </div>
 
     <div class="contact">
       <div>
         <small>WhatsApp</small>
-        <p>087750471148</p>
+        <p>088980910245</p>
         <button onclick="openWA()">Buka WA</button>
       </div>
       <div>
         <small>Telegram</small>
-        <p>@fanstch</p>
+        <p>@AllRizz</p>
         <button onclick="openTG()">Buka TG</button>
       </div>
     </div>
   </div>
 
-  <footer>© 2025 Vanilla Payment</footer>
+  <footer>© 2025 AllRizz Payment</footer>
 </div>
 
 <!-- PREVIEW IMAGE -->
@@ -50,7 +50,20 @@
   </div>
 </div>
 
+<!-- 🔊 SOUND -->
+<audio id="bgSound" loop>
+  <source src="sound.mp3" type="audio/mpeg">
+</audio>
+
 <script>
+const audio = document.getElementById("bgSound");
+audio.volume = 0.25; // biar nggak kaget
+
+// ▶ play saat user klik APA AJA (sekali doang)
+document.addEventListener("click", () => {
+  audio.play().catch(()=>{});
+}, { once: true });
+
 function copyText() {
   const text = document.getElementById("dana").innerText;
   navigator.clipboard.writeText(text);
@@ -58,11 +71,11 @@ function copyText() {
 }
 
 function openWA() {
-  window.open("https://wa.me/6287750471148", "_blank");
+  window.open("https://wa.me/6288980910245", "_blank");
 }
 
 function openTG() {
-  window.open("https://t.me/fanstch", "_blank");
+  window.open("https://t.me/GingRizz", "_blank");
 }
 
 function openPreview(img) {
@@ -72,7 +85,6 @@ function openPreview(img) {
 
   previewImg.src = img.src;
   downloadBtn.href = img.src;
-
   preview.style.display = "flex";
 }
 
