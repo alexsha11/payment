@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>TRX Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="container">
+  <h1 class="title">TRX PAYMENT</h1>
+  <p class="subtitle">Scan QR atau klik tombol untuk bayar</p>
+
+  <div class="card">
+    <img src="tes.jpg" class="qr" alt="QR Payment" onclick="openPreview(this)">
+
+    <p class="no">No DANA: <span id="dana">087750471148</span></p>
+
+    <div class="btn-group">
+      <a href="https://link.dana.id/qr/087750471148" class="btn primary">Bayar Sekarang</a>
+      <button class="btn" onclick="copyText()">Copy Nomor</button>
+    </div>
+
+    <div class="contact">
+      <div>
+        <small>WhatsApp</small>
+        <p>087750471148</p>
+        <button onclick="openWA()">Buka WA</button>
+      </div>
+      <div>
+        <small>Telegram</small>
+        <p>@fanstch</p>
+        <button onclick="openTG()">Buka TG</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>© 2025 Vanilla Payment</footer>
+</div>
+
+<!-- PREVIEW IMAGE -->
+<div id="preview">
+  <img id="previewImg">
+  <div class="preview-btn">
+    <a id="downloadBtn" class="btn primary" download>Download</a>
+    <button class="btn" onclick="closePreview()">Tutup</button>
+  </div>
+</div>
+
+<script>
+function copyText() {
+  const text = document.getElementById("dana").innerText;
+  navigator.clipboard.writeText(text);
+  alert("Nomor berhasil disalin!");
+}
+
+function openWA() {
+  window.open("https://wa.me/6287750471148", "_blank");
+}
+
+function openTG() {
+  window.open("https://t.me/fanstch", "_blank");
+}
+
+function openPreview(img) {
+  const preview = document.getElementById("preview");
+  const previewImg = document.getElementById("previewImg");
+  const downloadBtn = document.getElementById("downloadBtn");
+
+  previewImg.src = img.src;
+  downloadBtn.href = img.src;
+
+  preview.style.display = "flex";
+}
+
+function closePreview() {
+  document.getElementById("preview").style.display = "none";
+}
+</script>
+
+</body>
+</html>
